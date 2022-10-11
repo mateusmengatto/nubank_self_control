@@ -1,15 +1,26 @@
 import pandas as pd
 
-class DataCompile: #receive pandas df
-  def __init__(self, dataframe):
-    self.data = dataframe
-  
+def search_description(data, term):
+  result_sheet = data.loc[data['Descrição'].str.contains(str(term), case = False)] 
+  return result_sheet
 
-  def search_description(self, term):
-    result_sheet = self.data.loc[self.data['Descrição'].str.contains(str(term), case = False)]
-    return result_sheet.head()
-
-#Converter data head 'Descriçao' para 'Description'
-#criar classe de classificaçã
-
+def search_identificator(data, term):
+  result_sheet = data.loc[data['Identificador'].str.contains(str(term), case = False)]
+  return result_sheet
     
+def search_date(data, term):
+  result_sheet = data.loc[data['Data'].str.contains(str(term), case = False)]
+  return result_sheet
+
+def search_send_pix(data):
+  term = 'enviada pelo Pix'
+  result_sheet = data.loc[data['Descrição'].str.contains(str(term), case = False)]
+  return result_sheet
+
+def search_receive_pix(data):
+  term = 'recebida pelo Pix'
+  result_sheet = data.loc[data['Descrição'].str.contains(str(term), case = False)]
+  return result_sheet
+
+
+#code will be modified by language
