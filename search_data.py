@@ -9,14 +9,16 @@ def search_identificator(data, term):
   result_sheet = data.loc[data['Identificador'].str.contains(str(term), case = False)]
   return result_sheet
     
-def search_date(data, term):
-  result_sheet = data.loc[data['Data'].str.contains(str(term), case = False)]
+def search_date(data, date):
+  data['Data'] = pd.to_datetime(data['Data'], format = "%d/%m/%Y")
+  result_sheet = data.loc[data['Data'] == date]
   return result_sheet
 
-def search_period(data, start_time, end_time): #Rever problema de função
+def search_period(data, start_time, end_time): 
   data['Data'] = pd.to_datetime(data['Data'], format = "%d/%m/%Y")
-  period = data[pd.date_range(start_time, end_time)]
-  return period
+  filtered_period_data = data.loc[(data['Data'] >= start_time) 
+                                  & (data['Data'] <= end_time)]
+  return filtered_period_data
 
 def search_send_pix(data):
   term = 'enviada pelo Pix'
