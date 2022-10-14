@@ -6,7 +6,8 @@ def search_description(data, term):
   return result_sheet
 
 def search_identificator(data, term):
-  result_sheet = data.loc[data['Identificador'].str.contains(str(term), case = False)]
+  result_sheet = data.loc[data['Identificador'].str.contains(str(term), 
+                                                             case = False)]
   return result_sheet
     
 def search_date(data, date):
@@ -22,12 +23,14 @@ def search_period(data, start_time, end_time):
 
 def search_send_pix(data):
   term = 'enviada pelo Pix'
-  result_sheet = data.loc[data['Descrição'].str.contains(str(term), case = False)]
+  result_sheet = data.loc[data['Descrição'].str.contains(str(term), 
+                                                         case = False)]
   return result_sheet
 
 def search_receive_pix(data):
   term = 'recebida pelo Pix'
-  result_sheet = data.loc[data['Descrição'].str.contains(str(term), case = False)]
+  result_sheet = data.loc[data['Descrição'].str.contains(str(term), 
+                                                         case = False)]
   return result_sheet
 
 
