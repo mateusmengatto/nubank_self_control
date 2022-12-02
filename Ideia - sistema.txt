@@ -1,0 +1,3 @@
+Adicionar dimensões de cada item de acordo com o tamanho da ciaxa de plastico;
+o sistema calcula o volume de itens em casa localização e determina o aproveitamento 
+das localizações e indica caixas vazias e cheias.
