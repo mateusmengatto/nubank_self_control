@@ -16,9 +16,9 @@ dat = sd.search_period(x, '2022-02-01', '2022-02-28')
 y = dat
 
 
-g = mt.do_math(y, 'input')
+g = mt.do_math(y, 'outcome')
 
-print(g)
+print("g",   g)
 # x = 0 
 
 # for i in y:
