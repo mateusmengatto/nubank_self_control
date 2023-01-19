@@ -19,7 +19,7 @@ def do_math(datframe, function):
 
 
     if function == 'outcome':
-        x = df.loc[df['Valor']]
+        x = df
         input_sum = x['Valor'].values.sum()
         print(x)
         return input_sum
