@@ -1,7 +1,6 @@
 import pandas as pd
 
 
-
 def do_math(datframe, function):
     df = datframe
     if function == 'input':
